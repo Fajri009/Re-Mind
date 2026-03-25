@@ -51,7 +51,7 @@ fun ReMindTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = reMindTypography,
         content = content
     )
 }
