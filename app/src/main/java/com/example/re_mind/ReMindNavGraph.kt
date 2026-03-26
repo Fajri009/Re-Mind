@@ -8,6 +8,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.re_mind.ui.module.auth.LoginScreen
+import com.example.re_mind.ui.module.auth.RegisterScreen
 import com.example.re_mind.ui.module.auth.StartScreen
 import com.example.re_mind.ui.module.splash.SplashScreen
 import com.example.re_mind.viewmodel.splash.SplashViewModel
@@ -26,6 +28,8 @@ fun ReMindNavGraph(
         modifier = modifier
     ) {
         val navigateStart = { navActions.navigateTo(ReMindRoutes.Start.route) }
+        val navigateLogin = { navActions.navigateTo(ReMindRoutes.Login.route) }
+        val navigateRegister = { navActions.navigateTo(ReMindRoutes.Register.route) }
 
         composable(route = ReMindRoutes.Splash.route) {
             val viewModel = hiltViewModel<SplashViewModel>()
@@ -38,7 +42,18 @@ fun ReMindNavGraph(
         }
 
         composable(route = ReMindRoutes.Start.route) {
-            StartScreen()
+            StartScreen(
+                navigateLogin = navigateLogin,
+                navigateRegister = navigateRegister
+            )
+        }
+
+        composable(route = ReMindRoutes.Login.route) {
+            LoginScreen(navigateBack = { navController.popBackStack() },)
+        }
+
+        composable(route = ReMindRoutes.Register.route) {
+            RegisterScreen()
         }
     }
 }

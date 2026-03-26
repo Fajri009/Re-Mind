@@ -52,8 +52,8 @@ class MtcAppTheme {
             val Error900 = Color(0xFFB23636)
 
             // Shades
-            val Shades50 = Color(0xFFF6F6F6)
-            val Shades300 = Color(0xFF101010)
+            val Shades50 = Color(0xFFFFFFFF)
+            val Shades100 = Color(0xFF101010)
         }
     }
 
