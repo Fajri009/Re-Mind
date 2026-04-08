@@ -9,7 +9,7 @@ class MtcAppTheme {
     class Color {
         companion object {
             // Primary
-            val Primary50 = Color(0xFF9F85ED)
+            val Primary50 = Color(0xFFDFD6F9)
             val Primary300 = Color(0xFF7F5CE7)
             val Primary500 = Color(0xFF5F33E1)
             val Primary700 = Color(0xFF4C29B4)
@@ -54,6 +54,8 @@ class MtcAppTheme {
             // Shades
             val Shades50 = Color(0xFFFFFFFF)
             val Shades100 = Color(0xFF101010)
+
+            val DarkTransparentStatusBar = Color(0x4D1B1B1B)
         }
     }
 

@@ -88,7 +88,7 @@ fun StartScreen(
                     contentDescription = "Illustration Authentication"
                 )
                 Spacer(modifier = Modifier.height(125.dp))
-                CustomButton(text = "Daftar") { navigateLogin() }
+                CustomButton(text = "Daftar") { navigateRegister() }
                 Spacer(modifier = Modifier.height(15.dp))
                 Row {
                     Text(
@@ -100,7 +100,7 @@ fun StartScreen(
                     Text(
                         modifier = Modifier.clickable(
                             enabled = true,
-                            onClick = navigateRegister
+                            onClick = navigateLogin
                         ),
                         text = "Masuk",
                         color = Secondary900,

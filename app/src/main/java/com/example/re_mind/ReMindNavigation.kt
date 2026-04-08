@@ -10,6 +10,10 @@ sealed class ReMindRoutes(val route: String) {
     object Login : ReMindRoutes("Login")
 
     object Register : ReMindRoutes("Register")
+
+    object Dashboard : ReMindRoutes("Dashboard")
+
+    object Notification : ReMindRoutes("Navigation")
 }
 
 class ReMindNavigationActions(private val navController: NavHostController) {

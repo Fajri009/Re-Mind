@@ -28,12 +28,14 @@ import com.example.re_mind.R
 import com.example.re_mind.ui.components.CustomButton
 import com.example.re_mind.ui.components.CustomDialog
 import com.example.re_mind.ui.components.CustomTextField
-import com.example.re_mind.ui.module.component.ActionBar
 import com.example.re_mind.ui.theme.MtcAppTheme.Color.Companion.Primary500
 import com.example.re_mind.ui.theme.MtcAppTheme.Color.Companion.Shades50
 
 @Composable
-fun LoginScreen(navigateBack: () -> Unit) {
+fun LoginScreen(
+    navigateStart: () -> Unit,
+    navigateDashboard: () -> Unit
+) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -62,7 +64,7 @@ fun LoginScreen(navigateBack: () -> Unit) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Spacer(modifier = Modifier.height(15.dp))
-                ActionBar(onClick = navigateBack)
+                ActionBar(onClick = navigateStart)
                 Image(
                     modifier = Modifier.size(295.dp),
                     painter = painterResource(R.drawable.ill_auth),
@@ -98,6 +100,8 @@ fun LoginScreen(navigateBack: () -> Unit) {
                             onClick = {
                                 // Kalau Ada Error
 //                                showErrorDialog = true
+                                
+                                navigateDashboard()
 
                                 // Kalau Sukses
                             }
@@ -124,5 +128,5 @@ fun LoginScreen(navigateBack: () -> Unit) {
 @Preview
 @Composable
 fun LoginScreenPreview() {
-    LoginScreen {}
+    LoginScreen({}, {})
 }

@@ -1,4 +1,4 @@
-package com.example.re_mind.ui.module.component
+package com.example.re_mind.ui.module.auth
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
