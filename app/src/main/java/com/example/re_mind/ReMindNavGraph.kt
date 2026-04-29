@@ -13,7 +13,10 @@ import com.example.re_mind.ui.module.auth.RegisterScreen
 import com.example.re_mind.ui.module.auth.StartScreen
 import com.example.re_mind.ui.module.dashboard.DashboardScreen
 import com.example.re_mind.ui.module.notification.NotificationScreen
+import com.example.re_mind.ui.module.perform.PerformScreen
 import com.example.re_mind.ui.module.splash.SplashScreen
+import com.example.re_mind.ui.module.task.TaskScreen
+import com.example.re_mind.ui.module.user.UserScreen
 import com.example.re_mind.viewmodel.splash.SplashViewModel
 
 @Composable
@@ -34,6 +37,16 @@ fun ReMindNavGraph(
         val navigateRegister = { navActions.navigateTo(ReMindRoutes.Register.route) }
         val navigateDashboard = { navActions.navigateTo(ReMindRoutes.Dashboard.route) }
         val navigateNotification = { navActions.navigateTo(ReMindRoutes.Notification.route) }
+        val navigateTask = { navActions.navigateTo(ReMindRoutes.Task.route) }
+        val navigatePerform = { navActions.navigateTo(ReMindRoutes.Perform.route) }
+        val navigateUser = { navActions.navigateTo(ReMindRoutes.User.route) }
+
+        val navRoutes = listOf(
+            ReMindRoutes.Dashboard.route,
+            ReMindRoutes.Task.route,
+            ReMindRoutes.Perform.route,
+            ReMindRoutes.User.route
+        )
 
         composable(route = ReMindRoutes.Splash.route) {
             val viewModel = hiltViewModel<SplashViewModel>()
@@ -67,11 +80,30 @@ fun ReMindNavGraph(
         }
 
         composable(route = ReMindRoutes.Dashboard.route) {
-            DashboardScreen(navigateNotification = navigateNotification)
+            DashboardScreen(
+                navigateNotification = navigateNotification,
+                navActions = navActions,
+                navRoutes = navRoutes
+            )
         }
 
         composable(route = ReMindRoutes.Notification.route) {
             NotificationScreen(navigateBack = { navController.popBackStack() })
+        }
+
+        composable(route = ReMindRoutes.Task.route) {
+            TaskScreen(
+                navActions = navActions,
+                navRoutes = navRoutes
+            )
+        }
+
+        composable(route = ReMindRoutes.Perform.route) {
+            PerformScreen()
+        }
+
+        composable(route = ReMindRoutes.User.route) {
+            UserScreen()
         }
     }
 }
