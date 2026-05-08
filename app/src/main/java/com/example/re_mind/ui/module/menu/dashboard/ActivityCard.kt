@@ -1,4 +1,4 @@
-package com.example.re_mind.ui.module.dashboard
+package com.example.re_mind.ui.module.menu.dashboard
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

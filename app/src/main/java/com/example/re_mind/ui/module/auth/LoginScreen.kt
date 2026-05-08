@@ -64,7 +64,7 @@ fun LoginScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Spacer(modifier = Modifier.height(15.dp))
-                ActionBar(onClick = navigateStart)
+                ActionBar(onClick = navigateStart, auth = true)
                 Image(
                     modifier = Modifier.size(295.dp),
                     painter = painterResource(R.drawable.ill_auth),

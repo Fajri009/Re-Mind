@@ -48,7 +48,7 @@ import com.example.re_mind.ReMindNavigationActions
 import com.example.re_mind.ui.components.CustomNavBar
 import com.example.re_mind.ui.components.CustomSearchTextField
 import com.example.re_mind.ui.components.navList
-import com.example.re_mind.ui.module.dashboard.ActivityCard
+import com.example.re_mind.ui.module.menu.dashboard.ActivityCard
 import com.example.re_mind.ui.theme.MtcAppTheme.Color.Companion.Primary50
 import com.example.re_mind.ui.theme.MtcAppTheme.Color.Companion.Primary500
 import com.example.re_mind.ui.theme.MtcAppTheme.Color.Companion.Shades100

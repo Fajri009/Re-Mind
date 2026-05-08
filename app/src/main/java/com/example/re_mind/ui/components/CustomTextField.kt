@@ -19,6 +19,7 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.re_mind.ui.theme.MtcAppTheme.Color.Companion.Neutral100
@@ -33,9 +34,11 @@ fun CustomTextField(
     onValueChange: (String) -> Unit
 ) {
     Text(
+        modifier = Modifier.fillMaxWidth(),
         text = placeholder,
         style = paragraph1,
-        color = Shades100
+        color = Shades100,
+        textAlign = TextAlign.Start
     )
     Spacer(modifier = Modifier.height(10.dp))
     Box(

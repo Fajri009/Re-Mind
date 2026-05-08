@@ -11,12 +11,13 @@ import androidx.navigation.compose.rememberNavController
 import com.example.re_mind.ui.module.auth.LoginScreen
 import com.example.re_mind.ui.module.auth.RegisterScreen
 import com.example.re_mind.ui.module.auth.StartScreen
-import com.example.re_mind.ui.module.dashboard.DashboardScreen
+import com.example.re_mind.ui.module.menu.dashboard.DashboardScreen
 import com.example.re_mind.ui.module.notification.NotificationScreen
 import com.example.re_mind.ui.module.perform.PerformScreen
 import com.example.re_mind.ui.module.splash.SplashScreen
 import com.example.re_mind.ui.module.task.TaskScreen
-import com.example.re_mind.ui.module.user.UserScreen
+import com.example.re_mind.ui.module.menu.user.ProfileScreen
+import com.example.re_mind.ui.module.menu.user.changeprofile.ChangeProfileScreen
 import com.example.re_mind.viewmodel.splash.SplashViewModel
 
 @Composable
@@ -40,6 +41,7 @@ fun ReMindNavGraph(
         val navigateTask = { navActions.navigateTo(ReMindRoutes.Task.route) }
         val navigatePerform = { navActions.navigateTo(ReMindRoutes.Perform.route) }
         val navigateUser = { navActions.navigateTo(ReMindRoutes.User.route) }
+        val navigateChangeProfile = { navActions.navigateTo(ReMindRoutes.ChangeProfile.route) }
 
         val navRoutes = listOf(
             ReMindRoutes.Dashboard.route,
@@ -103,7 +105,15 @@ fun ReMindNavGraph(
         }
 
         composable(route = ReMindRoutes.User.route) {
-            UserScreen()
+            ProfileScreen(
+                navActions = navActions,
+                navRoutes = navRoutes,
+                navigateChangeProfile = navigateChangeProfile
+            )
+        }
+
+        composable(route = ReMindRoutes.ChangeProfile.route) {
+            ChangeProfileScreen(navigateBack = { navController.popBackStack() })
         }
     }
 }
