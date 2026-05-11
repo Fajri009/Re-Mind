@@ -22,6 +22,8 @@ sealed class ReMindRoutes(val route: String) {
     object User : ReMindRoutes("user")
 
     object ChangeProfile : ReMindRoutes("ChangeProfile")
+
+    object ChangePassword : ReMindRoutes("ChangePassword")
 }
 
 class ReMindNavigationActions(private val navController: NavHostController) {

@@ -112,13 +112,15 @@ fun RegisterScreen(
                         CustomTextField(
                             placeholder = "Password",
                             value = password,
-                            onValueChange = { password = it }
+                            onValueChange = { password = it },
+                            isPassword = true
                         )
                         Spacer(modifier = Modifier.height(15.dp))
                         CustomTextField(
                             placeholder = "Konfirmasi Password",
                             value = confirmationPassword,
-                            onValueChange = { confirmationPassword = it }
+                            onValueChange = { confirmationPassword = it },
+                            isPassword = true
                         )
                         Spacer(modifier = Modifier.height(24.dp))
                         CustomButton(

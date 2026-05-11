@@ -17,6 +17,7 @@ import com.example.re_mind.ui.module.perform.PerformScreen
 import com.example.re_mind.ui.module.splash.SplashScreen
 import com.example.re_mind.ui.module.task.TaskScreen
 import com.example.re_mind.ui.module.menu.user.ProfileScreen
+import com.example.re_mind.ui.module.menu.user.changepassword.ChangePasswordScreen
 import com.example.re_mind.ui.module.menu.user.changeprofile.ChangeProfileScreen
 import com.example.re_mind.viewmodel.splash.SplashViewModel
 
@@ -38,10 +39,8 @@ fun ReMindNavGraph(
         val navigateRegister = { navActions.navigateTo(ReMindRoutes.Register.route) }
         val navigateDashboard = { navActions.navigateTo(ReMindRoutes.Dashboard.route) }
         val navigateNotification = { navActions.navigateTo(ReMindRoutes.Notification.route) }
-        val navigateTask = { navActions.navigateTo(ReMindRoutes.Task.route) }
-        val navigatePerform = { navActions.navigateTo(ReMindRoutes.Perform.route) }
-        val navigateUser = { navActions.navigateTo(ReMindRoutes.User.route) }
         val navigateChangeProfile = { navActions.navigateTo(ReMindRoutes.ChangeProfile.route) }
+        val navigateChangePassword = { navActions.navigateTo(ReMindRoutes.ChangePassword.route) }
 
         val navRoutes = listOf(
             ReMindRoutes.Dashboard.route,
@@ -108,12 +107,18 @@ fun ReMindNavGraph(
             ProfileScreen(
                 navActions = navActions,
                 navRoutes = navRoutes,
-                navigateChangeProfile = navigateChangeProfile
+                navigateStart = navigateStart,
+                navigateChangeProfile = navigateChangeProfile,
+                navigateChangePassword = navigateChangePassword
             )
         }
 
         composable(route = ReMindRoutes.ChangeProfile.route) {
             ChangeProfileScreen(navigateBack = { navController.popBackStack() })
+        }
+
+        composable(route = ReMindRoutes.ChangePassword.route) {
+            ChangePasswordScreen(navigateBack = { navController.popBackStack() })
         }
     }
 }

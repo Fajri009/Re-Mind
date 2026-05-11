@@ -53,7 +53,9 @@ import com.example.re_mind.ui.theme.MtcAppTheme.Text.Companion.paragraph3
 fun ProfileScreen(
     navActions: ReMindNavigationActions,
     navRoutes: List<String>,
-    navigateChangeProfile: () -> Unit
+    navigateStart: () -> Unit,
+    navigateChangeProfile: () -> Unit,
+    navigateChangePassword: () -> Unit
 ) {
     Box(
         modifier = Modifier
@@ -124,12 +126,12 @@ fun ProfileScreen(
                             title = "Ubah Profil"
                         )
                         ProfileCard(
-                            onClick = {},
+                            onClick = navigateChangePassword,
                             icon = R.drawable.ic_change_password,
                             title = "Ubah Password"
                         )
                         ProfileCard(
-                            onClick = {},
+                            onClick = navigateStart,
                             icon = R.drawable.ic_logout,
                             title = "Keluar"
                         )
@@ -226,6 +228,8 @@ fun ProfileScreenPreview() {
     ProfileScreen(
         navRoutes = listOf(""),
         navActions = fakeNavActions,
-        navigateChangeProfile = {}
+        navigateStart = {},
+        navigateChangeProfile = {},
+        navigateChangePassword = {}
     )
 }
